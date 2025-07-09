@@ -11,9 +11,9 @@ public class MasterCardController {
 
     @GetMapping("/payment/verify")
     public ResponseEntity<String> verifyPayment(
-        @RequestParam String result,
-        @RequestParam String checkoutSessionId,
-        @RequestParam String orderId
+        @RequestParam(required = false) String result,
+        @RequestParam(required = false) String checkoutSessionId,
+        @RequestParam(required = false) String orderId
     ) {
         try {
             System.out.println("Result~~~CheckoutSessionId~~~OrderId: " + result + "~~~" + checkoutSessionId + "~~~" +  orderId);

@@ -11,13 +11,13 @@ public class MasterCardController {
 
     @GetMapping("/payment/verify")
     public ResponseEntity<String> verifyPayment(
-        @RequestParam(required = false) String result,
-        @RequestParam(required = false) String checkoutSessionId,
-        @RequestParam(required = false) String orderId
+        @RequestParam(required = false) String resultIndicator,
+        @RequestParam(required = false) String sessionVersion,
+        @RequestParam(required = false) String checkoutVersion
     ) {
         try {
-            System.out.println("Result~~~CheckoutSessionId~~~OrderId: " + result + "~~~" + checkoutSessionId + "~~~" +  orderId);
-            return ResponseEntity.ok(result + "~~~" + checkoutSessionId + "~~~" +  orderId);
+            System.out.println("ResultIndicator~~~SessionVersion~~~CheckoutVersion: " + resultIndicator + "~~~" + sessionVersion + "~~~" +  checkoutVersion);
+            return ResponseEntity.ok(resultIndicator + "~~~" + sessionVersion + "~~~" +  checkoutVersion);
         } catch (Exception ex) {
             ex.printStackTrace();
             System.out.println("Error verifying payment: " + ex.getMessage());
